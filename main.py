@@ -4,6 +4,8 @@
 import sys
 import heapq
 
+import Interface
+
 # 노선도(그래프), 역 목록(집합) 선언
 adj = {}
 stations = set()
@@ -74,6 +76,8 @@ if __name__ == '__main__':
         print(f'{len(stations)}개의 역을 성공적으로 로드했습니다.')
         print(stations)
 
+        # Interface.init_run()
+
         depart = input('출발할 역을 입력하세요: ')
 
         # 에러 핸들링
@@ -84,10 +88,3 @@ if __name__ == '__main__':
 
         # 최단시간 계산 후 출력
         print(f'{depart}: {dijkstra(depart)}')
-
-        # 추후 구현 할 것
-        # 1. 출발-도착 입력받아 시간 출력
-        # 2. 출발지에서의 모든 최단시간을 pretty하게 출력
-        # 3. 출발-도착 사이의 중간점 찾기 (모든 값 직접 비교, 오차값 입력 받아서 계산)
-        # 4. 노선도 읽어오기를 함수로 분리, 인자로 (리스트 내부의) 파일 이름들 넘겨서 처리
-        # ex) for item in routes: read_route(item) ...
