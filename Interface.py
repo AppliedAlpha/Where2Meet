@@ -38,14 +38,8 @@ def get_input():
     return input("□  실행할 메뉴 번호를 입력하세요: ")
 
 
-def init_run():
-    while True:
-        print_menu()
-        idx = get_input()
+def get_next_menu():
+    print_menu()
+    idx = get_input()
 
-        try:
-            next = Menu(int(idx))
-            print(Menu(int(idx)))
-
-        except ValueError as err:
-            print(str(err))
+    return Menu(int(idx))
