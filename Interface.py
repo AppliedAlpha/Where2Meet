@@ -7,14 +7,14 @@ from enum import Enum
 class Menu(Enum):
     BetweenTime = 1  # 두 역 사이의 시간
     MidPoint = 2  # 두 역 사이의 중간점 찾기
-    StationInfo = 3  # 한 역에서의 최소시간표
+    StationRange = 3  # 한 역에서 시간 내 갈 수 있는 역들 찾기
     Exit = 0  # 종료
 
 
 menu_text = {
     1: "두 역 사이의 시간 구하기",
     2: "두 역 사이의 중간점 찾기",
-    3: "역 시간표 구하기 (최소시간)",
+    3: "한 역에서 시간 내에 갈 수 있는 역들 찾기",
     0: "종료"
 }
 
@@ -30,6 +30,7 @@ def fprint(item):
 
 
 def print_menu():
+    fprint(['메뉴'])
     for item in Menu:
         fprint(f'{item.value}. {menu_text[item.value]}')
 

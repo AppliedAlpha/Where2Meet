@@ -3,6 +3,7 @@ routes = [
 ]
 
 
+# 노선들 파일 내용 읽어들이기
 def read():
     adj = {}
     stations = set()
