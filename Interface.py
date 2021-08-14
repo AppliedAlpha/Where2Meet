@@ -10,6 +10,8 @@ class Menu(Enum):
     StationRange = 3  # 한 역에서 시간 내 갈 수 있는 역들 찾기
     Exit = 0  # 종료
 
+    Debug = 823  # 디버그
+
 
 menu_text = {
     1: "두 역 사이의 시간 구하기",
@@ -53,8 +55,8 @@ def errprint(item):
 
 def print_menu():
     fprint(['메뉴'])
-    for item in Menu:
-        fprint(f'{item.value}. {menu_text[item.value]}')
+    for item in menu_text.items():
+        fprint(f'{item[0]}. {item[1]}')
 
 
 def get_input():

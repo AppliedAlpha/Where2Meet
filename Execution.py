@@ -4,7 +4,7 @@ import heapq
 
 import Opener
 
-from Interface import fprint, rprint, nprint
+from Interface import rprint, nprint
 from ExecutionError import ExecutionError
 
 # 노선도(그래프), 역 목록(집합) 선언
@@ -125,7 +125,7 @@ def mid_point():
 
         nprint(f'다음과 같은 역들을 총 {len(result)}개 탐색했습니다.')
         for item in result:
-            rprint(f'{item[0]}: 오차 {item[3]}분 (출발지에서 {item[1]}분, 도착지에서 {item[2]}분)')
+            rprint(f'{item[0]}: 오차 {item[3]}분 (첫 번째에서 {item[1]}분, 두 번째에서 {item[2]}분)')
 
     # 이하 오류 처리
     except ExecutionError as err:
@@ -166,3 +166,9 @@ def station_range():
 
     except Exception:
         raise Exception('역이 유효하지 않거나, 계산에 실패했습니다.')
+
+
+# 823. DEBUG
+def debug():
+    station = input('역 이름: ')
+    print(dijkstra(station))

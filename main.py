@@ -27,6 +27,10 @@ def run():
                 nprint('프로그램을 종료합니다.')
                 return
 
+            # DEBUG
+            elif next_menu == Menu.Debug:
+                Execution.debug()
+
         except ValueError:
             print('값의 입력이 잘못되었거나, 데이터가 올바르지 않습니다.')
 
