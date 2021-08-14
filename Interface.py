@@ -3,7 +3,7 @@ from enum import Enum
 
 
 # Menu Enum
-# 열거형: .name, .value로 호출
+# 열거형: .name, .value 로 호출
 class Menu(Enum):
     BetweenTime = 1  # 두 역 사이의 시간
     MidPoint = 2  # 두 역 사이의 중간점 찾기
@@ -15,7 +15,14 @@ menu_text = {
     1: "두 역 사이의 시간 구하기",
     2: "두 역 사이의 중간점 찾기",
     3: "한 역에서 시간 내에 갈 수 있는 역들 찾기",
-    0: "종료"
+    0: "종료",
+}
+
+color = {
+    'Non': '\033[0m',
+    'BrightRed': '\033[91m',
+    'BrightYellow': '\033[93m',
+    'BrightCyan': '\033[96m',
 }
 
 
@@ -27,6 +34,21 @@ def fprint(item):
         print(f'□  {item}')
     else:
         print()
+
+
+# Result Print
+def rprint(item):
+    print(f'{color["BrightCyan"]}□  {item}{color["Non"]}')
+
+
+# Notice Print
+def nprint(item):
+    print(f'{color["BrightYellow"]}□  {item}{color["Non"]}')
+
+
+# Error Print
+def errprint(item):
+    print(f'{color["BrightRed"]}□  {item}{color["Non"]}')
 
 
 def print_menu():

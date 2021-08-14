@@ -4,7 +4,7 @@
 import Interface
 import Execution
 
-from Interface import Menu, fprint
+from Interface import Menu, nprint, errprint
 
 
 def run():
@@ -24,14 +24,14 @@ def run():
                 Execution.station_range()
 
             elif next_menu == Menu.Exit:
-                fprint('프로그램을 종료합니다.')
+                nprint('프로그램을 종료합니다.')
                 return
 
         except ValueError:
             print('값의 입력이 잘못되었거나, 데이터가 올바르지 않습니다.')
 
         except Exception as err:
-            print(err)  # 추후 errprint로 user-define해서 사용
+            errprint(err)
 
         finally:
             print()

@@ -4,7 +4,7 @@ import heapq
 
 import Opener
 
-from Interface import fprint
+from Interface import fprint, rprint, nprint
 from ExecutionError import ExecutionError
 
 # 노선도(그래프), 역 목록(집합) 선언
@@ -64,7 +64,7 @@ def between_time():
 
         # 거리 구하고 출력
         dist = dijkstra(st)[en]
-        fprint(f'{st}, {en} 사이의 최소 시간은 {dist}분입니다.')
+        rprint(f'{st}, {en} 사이의 최소 시간은 {dist}분입니다.')
 
     # 이하 오류 처리
     except ExecutionError as err:
@@ -123,9 +123,9 @@ def mid_point():
         # 탐색 결과를 오차 기준으로 정렬 후 출력
         result.sort(key=lambda x: x[3])
 
-        fprint(f'다음과 같은 역들을 총 {len(result)}개 탐색했습니다.')  # rprint로 변경
+        nprint(f'다음과 같은 역들을 총 {len(result)}개 탐색했습니다.')
         for item in result:
-            fprint(f'{item[0]}: 오차 {item[3]}분 (출발지에서 {item[1]}분, 도착지에서 {item[2]}분)')
+            rprint(f'{item[0]}: 오차 {item[3]}분 (출발지에서 {item[1]}분, 도착지에서 {item[2]}분)')
 
     # 이하 오류 처리
     except ExecutionError as err:
@@ -156,9 +156,9 @@ def station_range():
         # 탐색 결과를 오차 기준으로 정렬 후 출력
         result.sort(key=lambda x: x[1])
 
-        fprint(f'다음과 같은 역들을 총 {len(result)}개 탐색했습니다.')  # rprint로 변경
+        nprint(f'다음과 같은 역들을 총 {len(result)}개 탐색했습니다.')  # rprint로 변경
         for item in result:
-            fprint(f'{item[0]}: {item[1]}분 소요')
+            rprint(f'{item[0]}: {item[1]}분 소요')
 
     # 이하 오류 처리
     except ExecutionError as err:
